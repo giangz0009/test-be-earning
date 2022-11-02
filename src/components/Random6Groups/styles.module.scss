@@ -1,0 +1,113 @@
+.wrapper {
+  background: #fefefe;
+  width: 100%;
+  height: 100%;
+  padding: 16px 24px;
+  border-radius: 8px;
+  .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    h3 {
+      color: #004dff;
+      font-weight: 500;
+      font-size: 17px;
+      line-height: 23px;
+      text-align: left;
+      text-transform: capitalize;
+    }
+    span {
+      color: gray;
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 21px;
+    }
+  }
+  .list {
+    --itemPerLine: 4;
+    --gap: 16px;
+    .groupsWrapper {
+      display: flex;
+      flex-wrap: wrap;
+      border: 1px solid #d3d7db;
+      filter: drop-shadow(0px 7px 64px rgba(0, 0, 0, 0.07));
+      border-radius: 6px;
+      margin-block: var(--gap);
+      padding-block: 8px;
+      .item {
+        width: calc(100% / var(--itemPerLine));
+        .itemWrapper {
+          padding: 6px 8px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          border-radius: 6px;
+          span {
+            display: inline-block;
+            padding: 8px;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 21px;
+            color: #04004d;
+            text-transform: capitalize;
+            &.selected {
+              color: #004dff;
+              background: #bbcffb;
+              box-shadow: 0px 7px 20px rgba(21, 79, 212, 0.1);
+              border-radius: 6px;
+            }
+          }
+          &:not(.index) {
+            span {
+              transition: 0.4s;
+              &:hover {
+                cursor: pointer;
+                color: #004dff;
+              }
+            }
+          }
+          &.index {
+            height: 100%;
+            span {
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              border: 1px solid #004dff;
+              width: 24px;
+              height: 24px;
+              border-radius: 50%;
+              font-weight: 500;
+              font-size: 15px;
+              color: #004dff;
+            }
+          }
+        }
+      }
+    }
+  }
+  .action {
+    button {
+      display: inline-block;
+      outline: none;
+      border: none;
+      width: 100%;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #004dff;
+      border-radius: 10px;
+      margin-top: 16px;
+      text-transform: uppercase;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 17px;
+      transition: 0.4s;
+      &:hover {
+        opacity: 0.8;
+        cursor: pointer;
+      }
+    }
+  }
+}
